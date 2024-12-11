@@ -66,6 +66,7 @@
 
 ///////////////////////////////////////////////
 
+console.log('pratybos 1.2')
 console.log(1)
 
 let aRes = 0
@@ -141,3 +142,79 @@ const array = Array.from({length: 11}, () => Math.floor(Math.random() * 21) + 5)
 
 const pairwiseSums = array.slice(1).map((num, i) => num + array[i]);
 console.log(pairwiseSums);
+
+///////////////////////////////////////////////
+
+console.log('pratybos 1.3')
+console.log('1')
+
+const user = {
+    name: 'Tomas',
+    lastName: 'Tomavicius',
+    age: 19,
+    hobby: 'swiming, flying',
+
+}
+console.log(user)
+
+user.alergies = 'peanut'
+
+console.log(user)
+
+///////////////////////////////////////////////
+
+console.log('2')
+
+delete user.alergies
+
+console.log(user)
+
+///////////////////////////////////////////////
+
+console.log('3')
+
+console.log(Object.keys(user));
+console.log(Object.values(user));
+
+
+///////////////////////////////////////////////
+
+console.log('4')
+
+const numbers = {
+    num: [41, 4, 56, 13, 5, 71]
+}
+
+// function summed(num) {
+//     return num.reduce((a, b) => a + b, 0);
+// }
+
+const summed =  numbers.num.reduce((a, b) => a + b, 0);
+
+console.log(summed)
+
+///////////////////////////////////////////////
+
+console.log('5')
+
+// function biggerValue(num) {
+//     numbers.num = num.filter((n) => n > 15);
+// }
+
+const biggerValue = numbers.num.filter((n) => n > 15);
+
+console.log(biggerValue);
+
+///////////////////////////////////////////////
+
+console.log('6')
+
+const textValues =  JSON.stringify(numbers)
+
+console.log(textValues)
+
+///////////////////////////////////////////////
+
+console.log('7')
+
+//I give up on this 'indexOf just gives me is no a function'
