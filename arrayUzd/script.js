@@ -36,8 +36,8 @@
 
 // console.log('2e')
 // const newArr = Array.from({length: 10}, () => Math.floor(Math.random() * 21) + 5)
-// const array = masyvas.concat(newArr)
-// console.log(array)
+// const arrays = masyvas.concat(newArr)
+// console.log(arrays)
 
 // ///////////////////////////////////////////////
 
@@ -64,86 +64,86 @@
 // const indexas = array.filter((x) => x < 10)
 // console.log(indexas);
 
-///////////////////////////////////////////////
+// /////////////////////////////////////////////
 
-console.log('pratybos 1.2')
-console.log(1)
+// console.log('pratybos 1.2')
+// console.log(1)
 
-let aRes = 0
-let bRes = 0
-let cRes = 0
-let dRes = 0
+// let aRes = 0
+// let bRes = 0
+// let cRes = 0
+// let dRes = 0
 
-const arr = Array.from({length: 200}, () => 'abcd'[Math.floor(Math.random() * 4)])
-console.log(arr)
+// const arrr = Array.from({length: 200}, () => 'abcd'[Math.floor(Math.random() * 4)])
+// console.log(arr)
 
-arr.forEach((x) => {
-    if (x === 'a'){
-        return aRes++
-    }else if (x === 'b'){
-        return bRes++
-    }else if (x === 'c'){
-        return cRes++
-    }else{
-        return dRes++
-    }
+// arrr.forEach((x) => {
+//     if (x === 'a'){
+//         return aRes++
+//     }else if (x === 'b'){
+//         return bRes++
+//     }else if (x === 'c'){
+//         return cRes++
+//     }else{
+//         return dRes++
+//     }
         
     
-})
+// })
 
-console.log(aRes)
-console.log(bRes)
-console.log(cRes)
-console.log(dRes)
+// console.log(aRes)
+// console.log(bRes)
+// console.log(cRes)
+// console.log(dRes)
 
-///////////////////////////////////////////////
+// ///////////////////////////////////////////////
 
-console.log('2')
+// console.log('2')
 
-let sortedArr = arr.sort()
-console.log(sortedArr)
+// let sortedArr = arr.sort()
+// console.log(sortedArr)
 
-///////////////////////////////////////////////
+// ///////////////////////////////////////////////
 
-console.log('3')
+// console.log('3')
 
-const allNumbers = Array.from({ length: 900 }, (_, i) => i + 100).sort(() => Math.random() - 0.5);
-const array1 = allNumbers.slice(0, 100);
-const array2 = allNumbers.slice(100, 200);
+// const allNumbers = Array.from({ length: 900 }, (_, i) => i + 100).sort(() => Math.random() - 0.5);
+// const array1 = allNumbers.slice(0, 100);
+// const array2 = allNumbers.slice(100, 200);
 
-console.log(array1);
-console.log(array2);
+// console.log(array1);
+// console.log(array2);
 
-///////////////////////////////////////////////
+// ///////////////////////////////////////////////
 
-console.log('4')
+// console.log('4')
 
-const oneArr = Array.from({length: 100}, () => array1[Math.floor(Math.random() * 4)])
+// const oneArr = Array.from({length: 100}, () => array1[Math.floor(Math.random() * 4)])
 
-console.log(oneArr)
+// console.log(oneArr)
 
-///////////////////////////////////////////////
+// ///////////////////////////////////////////////
 
-console.log('5')
-
-
+// console.log('5')
 
 
-const masiveArr = Array.from({length: 900}, () => allNumbers[Math.floor(Math.random() * 4)])
-const rlyMasive = allNumbers.slice(50, 150);
 
-console.log(rlyMasive)
 
-///////////////////////////////////////////////
+// const masiveArr = Array.from({length: 900}, () => allNumbers[Math.floor(Math.random() * 4)])
+// const rlyMasive = allNumbers.slice(50, 150);
 
-console.log('6')
+// console.log(rlyMasive)
 
-const array = Array.from({length: 11}, () => Math.floor(Math.random() * 21) + 5)
+// ///////////////////////////////////////////////
 
-const pairwiseSums = array.slice(1).map((num, i) => num + array[i]);
-console.log(pairwiseSums);
+// console.log('6')
 
-///////////////////////////////////////////////
+// const array = Array.from({length: 11}, () => Math.floor(Math.random() * 21) + 5)
+
+// const pairwiseSums = array.slice(1).map((num, i) => num + array[i]);
+// console.log(pairwiseSums);
+
+// ///////////////////////////////////////////////
 
 console.log('pratybos 1.3')
 console.log('1')
@@ -177,21 +177,22 @@ console.log(Object.keys(user));
 console.log(Object.values(user));
 
 
+// const check = Object.hasOwnPoperty('name')
+
 ///////////////////////////////////////////////
 
 console.log('4')
 
-const numbers = {
-    num: [41, 4, 56, 13, 5, 71]
+const pazymiai = {
+    lt: 10,
+    math: 10,
+    anglu: 5,
+    info: 10
 }
 
-// function summed(num) {
-//     return num.reduce((a, b) => a + b, 0);
-// }
+const mathP = Object.values(pazymiai).reduce((a, b) => a + b, 0);
 
-const summed =  numbers.num.reduce((a, b) => a + b, 0);
-
-console.log(summed)
+console.log(mathP)
 
 ///////////////////////////////////////////////
 
@@ -201,7 +202,7 @@ console.log('5')
 //     numbers.num = num.filter((n) => n > 15);
 // }
 
-const biggerValue = numbers.num.filter((n) => n > 15);
+const biggerValue = Object.values(pazymiai).filter((n) => n > 7);
 
 console.log(biggerValue);
 
@@ -209,12 +210,31 @@ console.log(biggerValue);
 
 console.log('6')
 
-const textValues =  JSON.stringify(numbers)
+const users = {
+    name: 'Gytis',
+    lastName: 'gytavicius',
+    age: 999,
+    hobbys: 'drinking',
 
-console.log(textValues)
+    printAllData: function(){
+        console.log(`${this.name}, ${this.lastName}, ${this.age}, ${this.hobbys}`)
+    }
+
+}
+
+users.printAllData()
+
+//console.log(`${user.name}, ${user.lastName}, ${user.age}, ${user.hobby}`);    
 
 ///////////////////////////////////////////////
 
 console.log('7')
 
-//I give up on this 'indexOf just gives me is no a function'
+
+
+const objLenght = Object.keys(user).length
+
+console.log(objLenght)
+
+
+///////////////////////////////////////////////
