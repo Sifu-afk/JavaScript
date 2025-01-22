@@ -14,9 +14,9 @@ const universalSingle1 = document.querySelector('.p2')
 const universalSingle2 = document.querySelector('#myDiv')
 
 
-console.log(universalSingle)
-console.log(universalSingle1)
-console.log(universalSingle2)
+// console.log(universalSingle)
+// console.log(universalSingle1)
+// console.log(universalSingle2)
 
 const universalAll = document.querySelectorAll('p')
 console.log(universalAll)
@@ -48,7 +48,7 @@ function changeColor() {
 
 }
 
-//window.addEventListener('resize', changeColor)
+window.addEventListener('resize', changeColor)
 
 console.log('+++++++++++++++++++++++++++++++')
 
@@ -87,60 +87,188 @@ textNode.addEventListener('click', ()=>{
 })
 
 
-///////////////////
+//////////////////////////////////////////////////////
+console.log('//////  1   //////')
+
+////Creates HTML elements and adds  text to it
 const textNode1 = document.createElement('p')
 textNode1.innerText = 'hallo gunter bunger '
 
-///////////////////////
+//////////////////////////////////////////////////////
+console.log('//////  2   //////')
+
+//create element that take DOM elements into html and then i append previous text node
 const divNode = document.createElement('div')
 containerDiv.appendChild(divNode)
 divNode.appendChild(textNode1)
 
-///////////////////
-textNode1.innerText = 'this is sic'
 
+//////////////////////////////////////////////////////
+console.log('//////  3   //////')
+
+
+////add classes and id to elements
 divNode.setAttribute('class', 'myClass')
 divNode.setAttribute('id', 'myld')
 
+
+//Creates HTML elements
 const aNode = document.createElement('a')
 const imgNode = document.createElement('img')
 
+//it puts DOM elements into html
 divNode.append(aNode, imgNode)
 
+////add classes and id to elements
 aNode.setAttribute('href', '#')
 imgNode.setAttribute('src', '')
 
-///////////////////////////
+//////////////////////////////////////////////////////
+console.log('//////  4   //////')
 
+//Creates HTML elements
+const wrapperNode = document.createElement('div')
 const p1Node = document.createElement('p')
 const p2Node = document.createElement('p')
 const p3Node = document.createElement('p')
 const p4Node = document.createElement('p')
 
-p1Node.setAttribute('class', 'p1')
-p2Node.setAttribute('class', 'p1')
-p3Node.setAttribute('class', 'p1')
-p4Node.setAttribute('class', 'p1')
+//add classes and id to elements
+wrapperNode.setAttribute('class', 'wrap')
+wrapperNode.setAttribute('id', 'wraper')
+p1Node.setAttribute('class', 'pColor1')
+p2Node.setAttribute('class', 'pColor1')
+p3Node.setAttribute('class', 'pColor1')
+p4Node.setAttribute('class', 'pColor1')
 
+//adds text
 p1Node.innerText = 'Halloo'
 p2Node.innerText = 'Halloo'
 p3Node.innerText = 'Halloo'
 p4Node.innerText = 'Halloo'
 
-const universalSingle3 = document.querySelector('.p1')
+//it puts DOM elements into html
+containerDiv.append(wrapperNode)
+wrapperNode.append(p1Node, p2Node, p3Node, p4Node)
+
+//finds all the elements with the same class
+const universalSingle3 = document.querySelectorAll('.pColor1')
+
+//finds odd and changes those elements that are odd
+for(let i=0; i < universalSingle3.length; i++){
+    if ((i + 1) % 2 == 0) {  
+        universalSingle3[i].classList.remove("pColor1")
+        universalSingle3[i].classList.add("pColor2")       
+        }
+}
+
+//////////////////////////////////////////////////////
+console.log('//////  5   //////')
+
+//Creates HTML elements
+const inputNode = document.createElement('input')
+const valuesNode = document.createElement('p')
+
+//add classes and id to elements
+inputNode.setAttribute('name', 'name')
+inputNode.setAttribute('placeholder', 'enter some text')
+valuesNode.setAttribute('id', 'values')
+
+//it puts DOM elements into html
+wrapperNode.append(inputNode, valuesNode)
+
+//find elements
+const input = document.querySelector("input");
+const log = document.getElementById("values");
 
 
-containerDiv.append(p1Node, p2Node, p3Node, p4Node)
+//On click it shows what i have typed in the input element and displays it below on value
+input.addEventListener("input", (e) => {
+           log.textContent = e.target.value;
+           console.log(log)  
+});
 
 
-universalSingle3.forEach((el,index) => {
+//////////////////////////////////////////////////////
+console.log('//////  6   //////')
 
+//Creates HTML elements
+const btnWraper = document.createElement('div')
+const buttonNode1 = document.createElement('button')
+const buttonNode2 = document.createElement('button')
 
+//add classes and id to elements
+btnWraper.setAttribute('id', 'btnW')
+buttonNode1.setAttribute('class', 'btn1')
+buttonNode2.setAttribute('class', 'btn2')
 
+//adds text
+buttonNode1.innerText = 'add cookie'
+buttonNode2.innerText = 'delete cookie'
 
-    if ((index + 1) % 2 == 0) {
-        el.classList.add('pColor1')
-        el.classList.remove('p1')
-    }
+//this is styling through JS using DOM
+buttonNode1.style.width = '100px'
+buttonNode2.style.width = '100px'
+buttonNode1.style.marginRight = '20px'
+buttonNode1.style.borderRadius = '7px'
+buttonNode2.style.borderRadius = '7px'
+buttonNode1.style.backgroundColor = 'lavender'
+buttonNode2.style.backgroundColor = 'lavender'
+buttonNode1.style.border = '1px solid purple'
+buttonNode2.style.border = '1px solid purple'
+
+//it puts DOM elements into html
+containerDiv.append(btnWraper)
+btnWraper.append(buttonNode1, buttonNode2)
+
+//On click it executes arrow function
+buttonNode1.addEventListener('click', () =>{
+    const tempNode = document.createElement('p')
+    tempNode.setAttribute('class', 'temporary')
+    tempNode.innerText = 'I love cookies'
+    btnWraper.append(tempNode)
 })
 
+//On click it executes arrow function
+buttonNode2.addEventListener('click', () => {
+    const element = document.querySelector('.temporary');
+    element.remove()
+})
+
+//////////////////////////////////////////////////////
+console.log('//////  7   //////')
+
+let count = 0;
+
+//Creates HTML elements
+const counterWraper = document.createElement('div')
+const counterElem = document.createElement('button')
+const counterDisplayNode = document.createElement('p')
+
+//this is styling through JS using DOM
+counterWraper.style.padding = '20px'
+counterElem.style.width = '100px'
+counterElem.style.borderRadius = '7px'
+counterElem.style.backgroundColor = 'lavender'
+counterElem.style.border = '1px solid purple'
+
+//Inputs text
+counterElem.innerText = 'Click ME!!!!!'
+
+
+//it puts DOM elements into html
+containerDiv.append(counterWraper)
+counterWraper.append(counterElem, counterDisplayNode)
+
+updateDisplay();
+
+//Everytime I click on button it runs it
+counterElem.addEventListener('click', () => {
+    count++;
+    updateDisplay()
+})
+
+//Updates display element
+function updateDisplay(){
+    counterDisplayNode.innerText = count;
+};
