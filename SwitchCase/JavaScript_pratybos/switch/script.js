@@ -21,6 +21,7 @@ const months = {
 let monthNumber = months[month];
 
 
+
 switch (monthNumber) {
     case 1:
         console.log(`This month is ${1}`);
@@ -61,12 +62,8 @@ switch (monthNumber) {
     default:
         console.log("Yrasytas ne menesio pavadinimas");
         break;
-    
-         
+
+
 
 
 };
-
-
-
-

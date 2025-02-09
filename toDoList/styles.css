@@ -1,3 +1,45 @@
 body{
-    background-color: gray;
+    background-color: rgb(87, 85, 85);
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid rgb(187, 118, 236);
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #7a7474;
+}
+
+
+.check-btn{
+    border-radius: 10px;
+    background-color: rgb(101, 101, 176);
+}
+
+
+
+.delete-btn{
+    border-radius: 5px;
+    background-color: rgb(179, 70, 48);
+}
+
+
+
+
+.normal-text{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.checkedOutText{
+    color: rgb(124, 121, 121);
+    text-decoration: line-through;
 }

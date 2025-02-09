@@ -88,6 +88,7 @@ textNode.addEventListener('click', ()=>{
 
 
 //////////////////////////////////////////////////////
+console.log('//////  Pratybos   1   //////')
 console.log('//////  1   //////')
 
 ////Creates HTML elements and adds  text to it
@@ -272,3 +273,5 @@ counterElem.addEventListener('click', () => {
 function updateDisplay(){
     counterDisplayNode.innerText = count;
 };
+
+
